@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Kontakt | AlpenFlow</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #004085;
+            --accent-color: #00a8cc;
+            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin-top: 10px; font-size: 1.2rem; color: #d1e9ff; }
+
+        main {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 { color: var(--primary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; margin-top: 0; }
+        h3 { color: var(--primary-color); margin-top: 1.5rem; }
+
+        /* Fix für die Text-Überlappung */
+        .contact-info p { margin: 10px 0; display: flex; align-items: baseline; }
+        .contact-info strong { min-width: 170px; display: inline-block; flex-shrink: 0; }
+
+        /* Formular Styles - Fix für die Checkbox */
+        .form-group { margin-bottom: 1.2rem; }
+        label { display: block; font-weight: bold; margin-bottom: 0.5rem; color: #495057; }
+        input[type="text"], input[type="email"], textarea, select { 
+            width: 100%; 
+            padding: 0.8rem; 
+            border: 1px solid #ced4da; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
+            font-family: inherit;
+        }
+        
+        .btn { 
+            background: var(--accent-color); 
+            color: white; 
+            padding: 1rem 2rem; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            font-size: 1rem;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: #008ba8; }
+
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        .checkbox-container input { margin-top: 4px; }
+        .checkbox-container label { font-weight: normal; margin: 0; }
+
+        footer { text-align: center; padding: 2rem; color: #6c757d; border-top: 1px solid #dee2e6; margin-top: 3rem; }
+
+        @media (max-width: 768px) {
+            .grid-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Support & Kontakt</h1>
+        <p>Wir helfen Ihnen bei allen Fragen rund um AlpenFlow.</p>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">← Zurück zum Shop</a>
+
+        <div class="grid-container">
+            <div class="card contact-info">
+                <h2>Kontaktwege</h2>
+                <p>Unser Support-Team in Innsbruck steht Ihnen für alle Fragen zur Software und unseren alpinen Lösungen zur Verfügung.</p>
+                
+                <h3>Telefon Support</h3>
+                <p>Mo – Do: 08:30 – 16:30 Uhr<br>Freitag: 08:30 – 14:00 Uhr</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                <p><strong>Hotline:</strong> +43 512 12519651</p>
+                
+                <h3>E-Mail</h3>
+                <p><strong>Support:</strong> support@gipfelcode-alpenflow.at</p>
+                
+            </div>
+
+            <div class="card">
+                <h2>Was können wir für Sie tun?</h2>
+                <form action="#" method="post" onsubmit="alert('Dies ist ein Mockup. Die Support-Anfrage wurde simuliert gesendet!'); return false;">
+                    
+                    <div class="form-group">
+                        <label for="topic">Betreff:</label>
+                        <select id="topic" name="topic" required>
+                            <option value="">- Bitte wählen -</option>
+                            <option value="demo">Demo-Version anfordern</option>
+                            <option value="support">Technischer Support</option>
+                            <option value="sales">Angebot / Vertrieb</option>
+                            <option value="callback">Rückruf erbeten</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Name / Firma</label>
+                        <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail Adresse</label>
+                        <input type="email" id="email" name="email" placeholder="mail@firma.at" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Ihre Nachricht</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Wie können wir Ihnen weiterhelfen?" required></textarea>
+                    </div>
+
+                    <div class="checkbox-container">
+                        <input type="checkbox" required id="privacy"> 
+                        <label for="privacy">Ich stimme zu, dass meine Daten zwecks Bearbeitung der Anfrage verarbeitet werden. Details in der <a href="rechtliches.html">Datenschutzerklärung</a>.</label>
+                    </div>
+
+                    <button type="submit" class="btn">Nachricht senden</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GipfelCode GmbH | Innsbruck</p>
+        <p style="font-size: 0.85rem;">
+            <a href="impressum.html" style="color: var(--primary-color); text-decoration: none;">Impressum</a> | 
+            <a href="rechtliches.html" style="color: var(--primary-color); text-decoration: none;">Datenschutz & Rechtliches</a>
+        </p>
+    </footer>
+
+</body>
+</html>

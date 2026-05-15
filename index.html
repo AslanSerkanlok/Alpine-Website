@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpenFlow | Die Software für alpine Teams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #f8f9fa; --text-color: #212529; --primary-color: #004085; --accent-color: #00a8cc; --font-family: 'Inter', sans-serif; }
+        body { font-family: var(--font-family); margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
+        header { background-color: var(--primary-color); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        header .logo-container { display: flex; align-items: center; gap: 10px; }
+        header h1 { margin: 0; font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; }
+        nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
+        nav a { color: white; text-decoration: none; font-weight: 600; transition: opacity 0.3s; }
+        nav a:hover { opacity: 0.8; }
+        .cart { background: #ffc107; color: black; padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: bold; }
+        .hero { display: flex; align-items: center; justify-content: space-between; padding: 4rem 5%; background: linear-gradient(135deg, #ffffff 0%, #e9ecef 100%); }
+        .hero-text { flex: 1; padding-right: 2rem; }
+        .hero-text h2 { font-size: 3rem; margin-top: 0; color: var(--primary-color); line-height: 1.2; }
+        .hero-text p { font-size: 1.2rem; margin-bottom: 2rem; color: #495057; }
+        .hero-image { flex: 1; text-align: right; }
+        .hero-image img { width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+       .btn { background: var(--accent-color); color: var(--text-color); border: none; padding: 1rem 2rem; font-size: 1.1rem; border-radius: 8px; cursor: pointer; font-weight: bold; transition: transform 0.2s, background 0.2s; }
+        .btn:hover { background: #008ba8; transform: translateY(-2px); }
+        .stats { display: flex; justify-content: space-around; background: var(--primary-color); color: white; padding: 3rem 5%; text-align: center; }
+        .stat-item h3 { font-size: 2.5rem; margin: 0; }
+        .stat-item p { margin: 0; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        footer { background: #343a40; color: white; text-align: center; padding: 3rem; margin-top: 2rem; }
+        footer a { color: #66d9e8; text-decoration: none; margin: 0 1rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header role="banner">
+        <div class="logo-container">
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20 80L50 20L80 80H20Z" fill="white"/>
+                <path d="M40 80L55 50L70 80H40Z" fill="#00a8cc"/>
+                <path d="M45 30L50 20L55 30H45Z" fill="#f8f9fa"/>
+            </svg>
+            <h1>AlpenFlow</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Shop</a></li>
+                <li><a href="about.html">Über uns & Medien</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="rechtliches.html">Rechtliches</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+        <div class="cart">🛒 <span id="cart-count">0</span></div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Projektmanagement.<br>Selbst auf 3.000 Metern.</h2>
+            <p>Die erste Software für Alpine Remote-Teams, die auch ohne Netzverbindung nahtlos weiterarbeitet.</p>
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #dee2e6; display: inline-block;">
+                <h3 style="margin:0 0 0.5rem 0; color: var(--primary-color);">AlpenFlow Pro</h3>
+                <p style="margin:0 0 1rem 0; font-weight: bold; font-size: 1.2rem;">€ 15,00 / Monat</p>
+                <button class="btn" onclick="addToCart()">Jetzt abonnieren</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Berglandschaft">
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item"><h3>100%</h3><p>Offline-Fähig</p></div>
+        <div class="stat-item"><h3>4.5k+</h3><p>Aktive Nutzer</p></div>
+        <div class="stat-item"><h3>0 ms</h3><p>Sync-Verzögerung</p></div>
+    </section>
+
+    <footer>
+        <div style="margin-bottom: 1rem;">
+            <a href="about.html">Über uns & Medien</a> |
+            <a href="kontakt.html">Support & Kontakt</a> |
+            <a href="rechtliches.html">Lizenzen & Datenschutz</a> |
+            <a href="impressum.html">Impressum</a>
+        </div>
+        <p style="margin-top: 1.5rem; color: #adb5bd;">&copy; 2026 GipfelCode GmbH.</p>
+    </footer>
+
+    <script>
+        let count = 0;
+        function addToCart() {
+            count++;
+            document.getElementById('cart-count').innerText = count;
+        }
+    </script>
+</body>
+</html>

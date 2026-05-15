@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns & Medien | AlpenFlow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #f8f9fa; --text-color: #212529; --primary-color: #004085; --accent-color: #00a8cc; --font-family: 'Inter', sans-serif; }
+        body { font-family: var(--font-family); margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
+        header { background-color: var(--primary-color); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; }
+        header .logo-container { display: flex; align-items: center; gap: 10px; }
+        header a { color: white; text-decoration: none; font-weight: bold; }
+        main { padding: 3rem 5%; max-width: 1000px; margin: 0 auto; }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--primary-color); text-decoration: none; font-weight: bold; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; border: 1px solid #dee2e6; }
+        h2 { color: var(--primary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; }
+        .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem; }
+        video, audio { width: 100%; border-radius: 8px; background: #000; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+        th, td { border: 1px solid #dee2e6; padding: 0.75rem; text-align: left; }
+        footer { background: #343a40; color: white; text-align: center; padding: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 80L50 20L80 80H20Z" fill="white"/>
+                <path d="M40 80L55 50L70 80H40Z" fill="#00a8cc"/>
+                <path d="M45 30L50 20L55 30H45Z" fill="#f8f9fa"/>
+            </svg>
+            <h1>AlpenFlow</h1>
+        </div>
+        <a href="index.html">Zurück zum Shop</a>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+
+        <div class="card">
+            <h2>Über uns</h2>
+            <p>Die GipfelCode GmbH aus Innsbruck steht für digitale Innovation im alpinen Raum. Wir entwickeln Tools, die dort funktionieren, wo andere aufgeben.</p>
+        </div>
+
+        <div class="card">
+            <h2>Unsere Markenidentität</h2>
+            <p>Wir schützen unsere Einzigartigkeit durch rechtlich beim EUIPO registrierte Markenformen <strong>(Nizza-Klassen 9 & 42)</strong>. 
+            <br><small><em>Hinweis: Die visuellen und technischen Konzepte dieser Marken wurden unter Unterstützung von KI (Google Gemini) erstellt.</em></small></p>
+            
+            <ul>
+                <li>
+                    <strong>Bildmarke:</strong> Unser stilisierter Berggipfel . 
+                </li>
+                <li>
+                    <strong>Wortmarke:</strong> Der geschützte Name "AlpenFlow".
+                </li>
+                <li>
+                    <strong>Klangmarke:</strong> Das akustische Signal für Statusänderungen .
+                </li>
+                <li>
+                    <strong>Farbmarke:</strong> Die "Alpen-Palette" bestehend aus Gletscherblau (#00a8cc) und Alpinblau (#004085).
+                </li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Medien & Einblicke</h2>
+            <div class="media-grid">
+                <div>
+                    <h3>Unsere Klangmarke</h3>
+                    <audio controls><source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg"></audio>
+                </div>
+                <div>
+                    <h3>Ein Einblick in die Landschaft</h3>
+                    <video controls><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Medien-Lizenzen & Urheberrecht</h2>
+            <p>Sämtliche auf dieser Website verwendeten Medien sind urheberrechtlich geprüft, lizenziert und über die folgenden Quellen direkt auffindbar:</p>
+            <table>
+                <tr>
+                    <th>Medienart</th>
+                    <th>Exakte Quelle / Direktlink</th>
+                    <th>Lizenz</th>
+                </tr>
+               <tr>
+                    <td>Bild (Startseite)</td>
+                    <td><a href="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" target="_blank" style="color: var(--primary-color);">Direktlink zur Bilddatei (Unsplash)</a></td>
+                    <td><a href="https://unsplash.com/license" target="_blank" style="color: var(--primary-color);">Unsplash License</a></td>
+                </tr>
+                <tr>
+                    <td>Video (Einblick)</td>
+                    <td><a href="https://www.w3schools.com/html/mov_bbb.mp4" target="_blank" style="color: var(--primary-color);">Big Buck Bunny (W3Schools)</a></td>
+                    <td><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" style="color: var(--primary-color);">CC BY 3.0</a></td>
+                </tr>
+                <tr>
+                    <td>Audio (Klangmarke)</td>
+                    <td><a href="https://www.w3schools.com/html/horse.mp3" target="_blank" style="color: var(--primary-color);">Test-Audio (W3Schools)</a></td>
+                    <td>Public Domain</td>
+                </tr>
+                <tr>
+                    <td>Schriftart</td>
+                    <td><a href="https://fonts.google.com/specimen/Inter" target="_blank" style="color: var(--primary-color);">Google Fonts: Inter</a></td>
+                    <td><a href="https://scripts.sil.org/OFL" target="_blank" style="color: var(--primary-color);">SIL Open Font License</a></td>
+                </tr>
+                <tr>
+                    <td>Design / Logo (SVG-Code)</td>
+                    <td>Eigenentwicklung der GipfelCode GmbH<br><small>(Bild und Code generiert mit Unterstützung von Google Gemini)</small></td>
+                    <td>© 2026 GipfelCode GmbH</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>&copy; 2026 GipfelCode GmbH.</footer>
+</body>
+</html>
