@@ -66,25 +66,10 @@
         Wir verwenden Cookies, um unsere Website nutzerfreundlich zu gestalten. Technisch notwendige Cookies werden sofort gesetzt. Für Analyse-Cookies benötigen wir gemäß <strong>§ 165 Abs. 3 TKG 2021</strong> Ihre Einwilligung. Weitere Infos finden Sie in unserer <a href="rechtliches.html" style="color: #00a8cc; text-decoration: underline;">Datenschutzerklärung</a>.
     </p>
     <div>
-        <button onclick="acceptCookies()" style="background: #00a8cc; color: white; border: none; padding: 0.8rem 2rem; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">Alle akzeptieren</button>
-        <button onclick="acceptCookies()" style="background: #495057; color: white; border: none; padding: 0.8rem 2rem; border-radius: 5px; cursor: pointer;">Nur notwendige</button>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'" style="background: #00a8cc; color: white; border: none; padding: 0.8rem 2rem; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">Alle akzeptieren</button>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'" style="background: #495057; color: white; border: none; padding: 0.8rem 2rem; border-radius: 5px; cursor: pointer;">Nur notwendige</button>
     </div>
 </div>
-
-<script>
-   
-    function acceptCookies() {
-        document.getElementById('cookie-banner').style.display = 'none';
-        localStorage.setItem('cookiesAccepted', 'true');
-    }
-
-    
-    window.onload = function() {
-        if (localStorage.getItem('cookiesAccepted')) {
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-    };
-</script>
     
     <header role="banner">
         <div class="logo-container">
