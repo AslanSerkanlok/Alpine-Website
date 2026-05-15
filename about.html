@@ -24,12 +24,27 @@
             color: #66d9e8 !important; 
             text-decoration: underline; 
             font-weight: bold; 
-            transition: color 0.3s;
         }
-        footer a:hover { color: #ffffff !important; text-decoration: none; }
+       
+        #cookie-banner {
+            position: fixed; bottom: 0; left: 0; width: 100%; background: #212529; color: white; 
+            padding: 1.5rem; display: flex; flex-direction: column; align-items: center; 
+            z-index: 9999; border-top: 3px solid #00a8cc; box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
+
+    <div id="cookie-banner">
+        <p style="margin-bottom: 1rem; text-align: center; max-width: 800px; font-size: 0.9rem;">
+            Wir verwenden Cookies, um die Website optimal zu gestalten. Technisch notwendige Cookies sind bereits gesetzt. 
+            Weitere Infos in der <a href="rechtliches.html" style="color: #00a8cc;">Datenschutzerklärung</a>.
+        </p>
+        <div>
+            <button onclick="acceptCookies()" style="background: #00a8cc; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">Akzeptieren</button>
+            <button onclick="acceptCookies()" style="background: #495057; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 5px; cursor: pointer;">Ablehnen</button>
+        </div>
+    </div>
 
     <header>
         <div class="logo-container">
@@ -48,28 +63,7 @@
 
         <div class="card">
             <h2>Über uns</h2>
-            <p>Die GipfelCode GmbH aus Innsbruck steht für digitale Innovation im alpinen Raum. Wir entwickeln Tools, die dort funktionieren, wo andere aufgeben.</p>
-        </div>
-
-        <div class="card">
-            <h2>Unsere Markenidentität</h2>
-            <p>Wir schützen unsere Einzigartigkeit durch rechtlich beim EUIPO registrierte Markenformen <strong>(Nizza-Klassen 9 & 42)</strong>. 
-            <br><small><em>Hinweis: Die visuellen und technischen Konzepte dieser Marken wurden unter Unterstützung von KI (Google Gemini) erstellt.</em></small></p>
-            
-            <ul>
-                <li>
-                    <strong>Bildmarke:</strong> Unser stilisierter Berggipfel . 
-                </li>
-                <li>
-                    <strong>Wortmarke:</strong> Der geschützte Name "AlpenFlow".
-                </li>
-                <li>
-                    <strong>Klangmarke:</strong> Das akustische Signal für Statusänderungen .
-                </li>
-                <li>
-                    <strong>Farbmarke:</strong> Die "Alpen-Palette" bestehend aus Gletscherblau (#00a8cc) und Alpinblau (#004085).
-                </li>
-            </ul>
+            <p>Die GipfelCode GmbH aus Innsbruck steht für digitale Innovation im alpinen Raum.</p>
         </div>
 
         <div class="card">
@@ -81,69 +75,52 @@
                 </div>
                 <div>
                     <h3>Ein Einblick in die Landschaft</h3>
-                    <video controls style="width: 100%; border-radius: 8px;">
-                    <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/1/18/Ziteil%2C_aerial_video.webm/Ziteil%2C_aerial_video.webm.480p.vp9.webm" type="video/webm">
-                    Ihr Browser unterstützt das Video-Tag nicht.
+                    <video controls poster="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80">
+                        <source src="https://vincefoster.github.io/vincefoster.github.io/video/mountain.mp4" type="video/mp4">
+                        Ihr Browser unterstützt das Video-Tag nicht.
                     </video>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2>Medien-Lizenzen & Urheberrecht</h2>
-            <p>Sämtliche auf dieser Website verwendeten Medien sind urheberrechtlich geprüft, lizenziert und über die folgenden Quellen direkt auffindbar:</p>
+            <h2>Medien-Lizenzen</h2>
             <table>
                 <tr>
                     <th>Medienart</th>
-                    <th>Exakte Quelle / Direktlink</th>
+                    <th>Quelle</th>
                     <th>Lizenz</th>
                 </tr>
                <tr>
-                    <td>Bild (Startseite)</td>
-                    <td><a href="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" target="_blank" style="color: var(--primary-color);">Direktlink zur Bilddatei (Unsplash)</a></td>
-                    <td><a href="https://unsplash.com/license" target="_blank" style="color: var(--primary-color);">Unsplash License</a></td>
-                </tr>
-               <tr>
-                    <td>Video (Einblick)</td>
-                    <td><a href="https://commons.wikimedia.org/wiki/File:Ziteil,_aerial_video.webm" target="_blank" style="color: var(--primary-color);">Ziteil, aerial video (Wikimedia Commons)</a></td>
-                    <td><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" style="color: var(--primary-color);">CC BY-SA 4.0</a></td>
-                </tr>
-                <tr>
-                    <td>Audio (Klangmarke)</td>
-                    <td><a href="https://www.w3schools.com/html/horse.mp3" target="_blank" style="color: var(--primary-color);">Test-Audio (W3Schools)</a></td>
+                    <td>Video (Berge)</td>
+                    <td><a href="https://vincefoster.github.io/vincefoster.github.io/">Mountain Sample</a></td>
                     <td>Public Domain</td>
                 </tr>
                 <tr>
-                    <td>Schriftart</td>
-                    <td><a href="https://fonts.google.com/specimen/Inter" target="_blank" style="color: var(--primary-color);">Google Fonts: Inter</a></td>
-                    <td><a href="https://scripts.sil.org/OFL" target="_blank" style="color: var(--primary-color);">SIL Open Font License</a></td>
-                </tr>
-                <tr>
-                    <td>Design / Logo (SVG-Code)</td>
-                    <td>Eigenentwicklung der GipfelCode GmbH<br><small>(Bild und Code generiert mit Unterstützung von Google Gemini)</small></td>
-                    <td>© 2026 GipfelCode GmbH</td>
+                    <td>Audio</td>
+                    <td><a href="https://www.w3schools.com/html/horse.mp3">W3Schools</a></td>
+                    <td>Public Domain</td>
                 </tr>
             </table>
         </div>
     </main>
 
-   <footer>
-        <div style="margin-bottom: 1rem;">
-            <a href="about.html">Über uns & Medien</a> |
-            <a href="kontakt.html">Support & Kontakt</a> |
-            <a href="rechtliches.html">Lizenzen & Datenschutz</a> |
-            <a href="impressum.html">Impressum</a>
-        </div>
-        
-      <div style="max-width: 800px; margin: 0 auto 1.5rem auto; padding: 1rem; border: 1px solid #495057; border-radius: 8px; background-color: rgba(255,255,255,0.05); font-size: 0.85rem; text-align: left; color: #adb5bd;">
-        <strong>Hinweis zur Erstellung (KI-Offenlegung):</strong><br>
-        Diese Website wurde unter Zuhilfenahme von generativer KI (Google Gemini) erstellt. Die KI wurde zur Erstellung des HTML/CSS-Grundgerüsts, zur Strukturierung der Seite sowie zur Formulierung von Platzhaltertexten eingesetzt. 
-        <strong>Zudem unterstützte die KI bei der Recherche und korrekten Zitation der fachspezifischen Rechtsgrundlagen (z. B. DSGVO-Artikel und TKG 2021)</strong>, um die formale Korrektheit der juristischen Texte sicherzustellen. 
-        Sämtliche Anpassungen sowie das Verfassen der juristischen Texte wurden eigenständig durchgeführt.
-      </div>
-        
-        <p style="margin-top: 1.5rem; color: #adb5bd;">&copy; 2026 GipfelCode GmbH.</p>
+    <footer>
+        <p>&copy; 2026 GipfelCode GmbH.</p>
     </footer>
+
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('cookiesAccepted') === 'true') {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        };
+    </script>
 
 </body>
 </html>
