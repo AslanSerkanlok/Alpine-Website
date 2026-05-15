@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpenFlow Webshop | GipfelCode GmbH</title>
+    <style>
+        /* Farbpalette & Basis-Setup */
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #004085;
+            --secondary-color: #e2e3e5;
+            --focus-color: #ffc107;
+            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        /* Smooth Scrolling & Abstand für den fixierten Header */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px; 
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+
+        /* Sticky Header (bleibt beim Scrollen oben) */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Die Sektionen sind jetzt alle untereinander und sichtbar */
+        .page-section { 
+            margin-bottom: 4rem; 
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        /* Entfernt den Strich bei der letzten Sektion */
+        .page-section:last-of-type { border-bottom: none; } 
+
+        .card {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn:hover { background-color: #002752; }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        footer a { color: #17a2b8; text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { text-decoration: underline; }
+
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+        th, td { border: 1px solid #dee2e6; padding: 0.75rem; text-align: left; }
+        th { background-color: var(--secondary-color); }
+
+        /* ================= MODAL / POPUP STYLES ================= */
+        #welcome-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75); /* Dunkler Hintergrund */
+            z-index: 9999; /* Ganz vorne */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        /* Das "X" zum Schließen */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #6c757d;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .close-btn:hover { color: #dc3545; }
+    </style>
+</head>
+<body>
+
+    <div id="welcome-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="close-btn" id="close-modal-btn" aria-label="Schließen">&times;</button>
+            <h2 id="modal-title">Sichere dir AlpenFlow Pro!</h2>
+            <p>Starte jetzt durch mit der ultimativen Offline-First Projektmanagement-Software für alpine Teams.</p>
+            <div style="background: var(--secondary-color); padding: 1rem; border-radius: 4px; margin: 1rem 0;">
+                <strong>Sonderangebot: € 15,00 / Monat</strong>
+            </div>
+            <button class="btn" onclick="alert('Mockup: Artikel im Warenkorb!'); document.getElementById('welcome-modal').style.display = 'none';">Jetzt abonnieren</button>
+            <p style="font-size: 0.8rem; margin-top: 1rem; color: #6c757d;">Oder klicke auf das X, um dich erst auf der Seite umzusehen.</p>
+        </div>
+    </div>
+
+    <header role="banner">
+        <h1>⛰️ AlpenFlow Webshop</h1>
+        <nav role="navigation" aria-label="Hauptnavigation">
+            <ul>
+                <li><a href="#home">Home / Shop</a></li>
+                <li><a href="#about">About Us & Marken</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#impressum">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        
+        <section id="home" class="page-section">
+            <h2>Willkommen bei AlpenFlow</h2>
+            <p>Die Projektmanagement-Software für Alpine Remote-Teams. 100% Offline-fähig, wenn der Empfang mal wieder weg ist. Scrolle nach unten, um mehr zu erfahren!</p>
+            
+            <div class="card">
+                <h3>AlpenFlow Pro (Abo)</h3>
+                <p>Voller Funktionsumfang inkl. Team-Sync, Ressourcenplanung und Offline-First Technologie.</p>
+                <p><strong>Preis: € 15,00 / Monat</strong></p>
+                <button class="btn" onclick="alert('Mockup: Artikel wurde dem Warenkorb hinzugefügt.')">In den Warenkorb</button>
+            </div>
+        </section>
+
+        <section id="about" class="page-section">
+            <h2>About Us</h2>
+            <p>Die GipfelCode GmbH aus Innsbruck besteht aus 5 leidenschaftlichen Entwicklern, die das Problem von schlechtem Internet auf Hütten aus eigener Erfahrung kennen. Deshalb haben wir AlpenFlow entwickelt.</p>
+            
+            <div class="card">
+                <h3>Unsere Markenidentität</h3>
+                <p>Wir schützen unser geistiges Eigentum durch folgende, beim EUIPO registrierte Marken (Nizza-Klassen 9 und 42):</p>
+                <ul>
+                    <li><strong>1. Wortbildmarke:</strong> Der Schriftzug "AlpenFlow" kombiniert mit unserem charakteristischen Doppelgipfel-Logo.</li>
+                    <li><strong>2. Farbmarke:</strong> Unser exklusiver Farbverlauf von "Gletscherweiß" zu "Alpinblau" (Pantone 2154 C).</li>
+                    <li><strong>3. Klangmarke:</strong> Ein digitales Kuhglocken-Echo, das ertönt, wenn unsere Software wieder eine Internetverbindung herstellt.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="features" class="page-section">
+            <h2>Lizenzen & Datenschutz</h2>
+            <div class="card">
+                <h3>Endbenutzer-Lizenzvertrag (EULA)</h3>
+                <p>Mit dem Kauf erwerben Sie ein nicht-ausschließliches, nicht übertragbares Recht, die Software für interne Zwecke zu nutzen. Urheberrechte verbleiben bei uns.</p>
+                <p><em>Haftungsbeschränkung:</em> Die GipfelCode GmbH haftet nur für vorsätzliches oder grob fahrlässiges Verhalten (gemäß österreichischem Recht).</p>
+            </div>
+            
+            <div class="card">
+                <h3>Datenschutzerklärung</h3>
+                <p>Wir verarbeiten Ihre Daten (Name, E-Mail bei Kontakt/Kauf) zur Vertragserfüllung (Art 6 Abs 1 lit b DSGVO). Wir verwenden Session-Cookies für den Warenkorb, verzichten aber auf Third-Party-Tracking.</p>
+            </div>
+        </section>
+
+        <section id="impressum" class="page-section">
+            <h2>Kontakt & Impressum</h2>
+            <div class="card" style="background: var(--secondary-color);">
+                <h3>Schreib uns eine Nachricht</h3>
+                <form onsubmit="event.preventDefault(); alert('Nachricht gesendet!');">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;" required>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email">E-Mail:</label><br>
+                        <input type="email" id="email" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;" required>
+                    </div>
+                    <button type="submit" class="btn">Senden</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <p><strong>Informationspflicht lt. §5 ECG, §14 UGB, §63 GewO und Offenlegungspflicht lt. §25 MedienG.</strong></p>
+                <p><strong>GipfelCode GmbH</strong><br>
+                Musterstraße 12, 6020 Innsbruck, Österreich</p>
+                <p><strong>UID-Nummer:</strong> ATU12345678 | <strong>Firmenbuchnummer:</strong> FN 123456x<br>
+                E-Mail: office@alpenflow-mock.at | Tel.: +43 512 123456</p>
+            </div>
+        </section>
+
+        <section id="a11y" class="page-section">
+            <h2>Barrierefreiheit & Urheberrecht</h2>
+            <p>Diese Website ist <strong>WCAG 2.2 Level AA</strong> konform. Alle verwendeten Schriftarten (Inter, SIL Open Font License) und das Design (© GipfelCode GmbH) sind rechtlich abgesichert.</p>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div>
+            <a href="#features">Lizenzen & Datenschutz</a> |
+            <a href="#impressum">Impressum</a> |
+            <a href="#a11y">Barrierefreiheit</a>
+        </div>
+        <p style="margin-top: 1rem;">&copy; 2026 GipfelCode GmbH. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        // Logik für das Schließen des Popups über das "X"
+        const modal = document.getElementById('welcome-modal');
+        const closeBtn = document.getElementById('close-modal-btn');
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none'; // Versteckt das Popup
+        });
+
+        // Optional: Schließen, wenn man außerhalb der weißen Box ins Schwarze klickt
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
