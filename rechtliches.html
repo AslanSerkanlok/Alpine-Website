@@ -110,6 +110,16 @@
 </head>
 <body>
 
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #212529; color: white; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; box-shadow: 0 -4px 10px rgba(0,0,0,0.3); border-top: 3px solid #00a8cc;">
+    <p style="margin: 0 0 1rem 0; font-size: 0.9rem; text-align: center; max-width: 800px;">
+        Wir verwenden Cookies, um unsere Website nutzerfreundlich zu gestalten. Technisch notwendige Cookies werden sofort gesetzt. Für Analyse-Cookies benötigen wir gemäß <strong>§ 165 Abs. 3 TKG 2021</strong> Ihre Einwilligung. Weitere Infos finden Sie in unserer <a href="rechtliches.html" style="color: #00a8cc; text-decoration: underline;">Datenschutzerklärung</a>.
+    </p>
+    <div>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'" style="background: #00a8cc; color: white; border: none; padding: 0.8rem 2rem; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">Alle akzeptieren</button>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'" style="background: #495057; color: white; border: none; padding: 0.8rem 2rem; border-radius: 5px; cursor: pointer;">Nur notwendige</button>
+    </div>
+</div>
+    
     <header>
         <h1>Rechtliche Informationen</h1>
     </header>
