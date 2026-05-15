@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | AlpenFlow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg-color: #f8f9fa; 
+            --text-color: #212529; 
+            --primary-color: #004085; 
+            --accent-color: #00748e; 
+            --font-family: 'Inter', sans-serif; 
+        }
+
+        body { font-family: var(--font-family); margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
+        
+        header { 
+            background-color: var(--primary-color); 
+            color: white; 
+            padding: 1rem 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        header a { color: white; text-decoration: none; font-weight: bold; }
+
+        main { padding: 3rem 5%; max-width: 800px; margin: 0 auto; }
+        
+        .card { 
+            background: white; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+            border: 1px solid #dee2e6; 
+            margin-bottom: 2rem;
+        }
+
+        h2 { color: var(--primary-color); margin-top: 0; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; }
+
+        
+        .order-summary { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .order-summary li { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+        .total { font-weight: 800; font-size: 1.2rem; color: var(--primary-color); }
+
+        
+        .form-group { margin-bottom: 1.2rem; }
+        label { display: block; margin-bottom: 0.4rem; font-weight: 600; }
+        input[type="text"], input[type="email"] { 
+            width: 100%; padding: 0.8rem; border: 1px solid #ced4da; border-radius: 6px; box-sizing: border-box; 
+        }
+
+        
+        .checkbox-group { margin-top: 1.5rem; font-size: 0.9rem; }
+        .checkbox-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 1rem; }
+        .checkbox-item input { margin-top: 4px; }
+
+        
+        .btn-order { 
+            background: #00748e; color: white !important; border: none; width: 100%; 
+            padding: 1.2rem; font-size: 1.2rem; border-radius: 8px; cursor: pointer; 
+            font-weight: 800; text-transform: uppercase; transition: background 0.2s;
+        }
+        .btn-order:hover { background: #005a6e; }
+
+      
+        footer { background: #343a40; color: white; text-align: center; padding: 3rem; margin-top: 4rem; }
+        footer a, footer a:visited { color: #66d9e8 !important; text-decoration: underline; font-weight: bold; margin: 0 0.5rem; }
+        footer div { color: #ffffff !important; }
+        footer p { color: #adb5bd !important; margin-top: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h1>AlpenFlow</h1>
+        </div>
+        <a href="index.html">← Zurück zum Shop</a>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Ihre Bestellung</h2>
+            <ul class="order-summary">
+                <li><span>AlpenFlow Pro (Monatsabo)</span> <span>€ 15,00</span></li>
+                <li><span>Servicepauschale</span> <span>€ 0,00</span></li>
+                <li class="total"><span>Gesamtsumme (inkl. USt.)</span> <span>€ 15,00</span></li>
+            </ul>
+
+            <form action="#">
+                <h2>Kontaktdaten</h2>
+                <div class="form-group">
+                    <label for="name">Vollständiger Name</label>
+                    <input type="text" id="name" placeholder="z.B. Max Mustermann" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail Adresse</label>
+                    <input type="email" id="email" placeholder="ihre@email.at" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="eula" required>
+                        <label for="eula">Ich akzeptiere die <a href="rechtliches.html" target="_blank" style="color: var(--primary-color);">Software-Lizenzbedingungen (EULA)</a> und die Verkaufsbedingungen.</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="dsgvo" required>
+                        <label for="dsgvo">Ich habe die <a href="rechtliches.html#datenschutz" target="_blank" style="color: var(--primary-color);">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Vertragserfüllung zu.</label>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #6c757d; margin-top: 1rem;">
+                        <strong>Hinweis zum Widerruf:</strong> Mit dem Klick auf den Button verlange ich die sofortige Ausführung des Vertrags vor Ablauf der Widerrufsfrist und bestätige, dass ich mein Widerrufsrecht bei vollständiger Vertragserfüllung verliere.
+                    </p>
+                </div>
+
+                <button type="submit" class="btn-order">Zahlungspflichtig bestellen</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <a href="about.html">Über uns & Medien</a> |
+            <a href="kontakt.html">Support & Kontakt</a> |
+            <a href="rechtliches.html">Lizenzen & Datenschutz</a> |
+            <a href="impressum.html">Impressum</a>
+        </div>
+        
+        <div style="max-width: 800px; margin: 0 auto 1.5rem auto; padding: 1rem; border: 1px solid #495057; border-radius: 8px; background-color: rgba(255,255,255,0.05); font-size: 0.85rem; text-align: left; color: #adb5bd;">
+            <strong>Hinweis zur Erstellung (KI-Offenlegung):</strong><br>
+            Diese Website wurde unter Zuhilfenahme von generativer KI (Google Gemini) erstellt. Die KI wurde zur Erstellung des HTML/CSS-Grundgerüsts, zur Strukturierung der Seite sowie zur Formulierung von Platzhaltertexten eingesetzt. 
+            <strong>Zudem unterstützte die KI bei der Recherche und korrekten Zitation der fachspezifischen Rechtsgrundlagen (z. B. DSGVO-Artikel und TKG 2021)</strong>, um die formale Korrektheit der juristischen Texte sicherzustellen. 
+            Sämtliche Anpassungen sowie das Verfassen der juristischen Texte wurden eigenständig durchgeführt.
+        </div>
+        
+        <p>&copy; 2026 GipfelCode GmbH.</p>
+    </footer>
+
+</body>
+</html>
