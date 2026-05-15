@@ -8,28 +8,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-color: #f8f9fa; --text-color: #212529; --primary-color: #004085; --accent-color: #00a8cc; --font-family: 'Inter', sans-serif; }
+        :root { 
+            --bg-color: #f8f9fa; 
+            --text-color: #212529; 
+            --primary-color: #004085; 
+            --accent-color: #00748e; /* Kontrast-konform für Barrierefreiheit */
+            --font-family: 'Inter', sans-serif; 
+        }
         body { font-family: var(--font-family); margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
+        
         header { background-color: var(--primary-color); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         header .logo-container { display: flex; align-items: center; gap: 10px; }
         header h1 { margin: 0; font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; }
         nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
         nav a { color: white; text-decoration: none; font-weight: 600; transition: opacity 0.3s; }
         nav a:hover { opacity: 0.8; }
-        .cart { background: #ffc107; color: black; padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: bold; }
+        
         .hero { display: flex; align-items: center; justify-content: space-between; padding: 4rem 5%; background: linear-gradient(135deg, #ffffff 0%, #e9ecef 100%); }
         .hero-text { flex: 1; padding-right: 2rem; }
         .hero-text h2 { font-size: 3rem; margin-top: 0; color: var(--primary-color); line-height: 1.2; }
         .hero-text p { font-size: 1.2rem; margin-bottom: 2rem; color: #495057; }
+        
         .hero-image { flex: 1; text-align: right; }
         .hero-image img { width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-       .btn { background: var(--accent-color); color: var(--text-color); border: none; padding: 1rem 2rem; font-size: 1.1rem; border-radius: 8px; cursor: pointer; font-weight: bold; transition: transform 0.2s, background 0.2s; }
-        .btn:hover { background: #008ba8; transform: translateY(-2px); }
+        
+        /* Button als Link gestylt */
+        .btn { 
+            background: var(--accent-color); 
+            color: white !important; 
+            border: none; 
+            padding: 1rem 2rem; 
+            font-size: 1.1rem; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            transition: transform 0.2s, background 0.2s; 
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover { background: #005a6e; transform: translateY(-2px); }
+        
         .stats { display: flex; justify-content: space-around; background: var(--primary-color); color: white; padding: 3rem 5%; text-align: center; }
         .stat-item h3 { font-size: 2.5rem; margin: 0; }
         .stat-item p { margin: 0; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        
         footer { background: #343a40; color: white; text-align: center; padding: 3rem; margin-top: 2rem; }
-        footer a { color: #66d9e8; text-decoration: none; margin: 0 1rem; font-weight: bold; }
+        footer a, footer a:visited { color: #66d9e8 !important; text-decoration: underline; font-weight: bold; margin: 0 1rem; }
+        footer a:hover { color: #ffffff !important; text-decoration: none; }
+        footer div { color: #ffffff !important; } 
+        footer p { color: #adb5bd !important; margin-top: 1.5rem; }
     </style>
 </head>
 <body>
@@ -52,8 +79,7 @@
                 <li><a href="impressum.html">Impressum</a></li>
             </ul>
         </nav>
-        <div class="cart">🛒 <span id="cart-count">0</span></div>
-    </header>
+        </header>
 
     <section class="hero">
         <div class="hero-text">
@@ -62,7 +88,7 @@
             <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #dee2e6; display: inline-block;">
                 <h3 style="margin:0 0 0.5rem 0; color: var(--primary-color);">AlpenFlow Pro</h3>
                 <p style="margin:0 0 1rem 0; font-weight: bold; font-size: 1.2rem;">€ 15,00 / Monat</p>
-                <button class="btn" onclick="addToCart()">Jetzt abonnieren</button>
+                <a href="checkout.html" class="btn">Jetzt abonnieren</a>
             </div>
         </div>
         <div class="hero-image">
@@ -91,15 +117,8 @@
         Sämtliche Anpassungen sowie das Verfassen der juristischen Texte wurden eigenständig durchgeführt.
       </div>
         
-        <p style="margin-top: 1.5rem; color: #adb5bd;">&copy; 2026 GipfelCode GmbH.</p>
+        <p>&copy; 2026 GipfelCode GmbH.</p>
     </footer>
 
-    <script>
-        let count = 0;
-        function addToCart() {
-            count++;
-            document.getElementById('cart-count').innerText = count;
-        }
-    </script>
 </body>
 </html>
